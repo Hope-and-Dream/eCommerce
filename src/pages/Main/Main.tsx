@@ -1,6 +1,7 @@
 import { Header, ItemCard, Footer } from '../../components';
 import { Items } from '../../types.ts';
 import { useGetItems } from '../../hooks/';
+// import { useState } from 'react';
 
 export const Main = () => {
   const items: Items[] = useGetItems();

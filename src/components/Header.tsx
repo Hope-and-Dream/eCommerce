@@ -17,6 +17,9 @@ import {
   PlayCircleIcon,
 } from '@heroicons/react/20/solid';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { RootState } from '../store/store';
+import ProfileBadge from './ProfileBadge';
 
 const products = [
   {
@@ -61,6 +64,7 @@ function classNames(...classes: string[]) {
 
 export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { isLoggedIn } = useSelector((state: RootState) => state.user);
 
   return (
     <header className="bg-white">
@@ -163,12 +167,15 @@ export const Header = () => {
           </a>
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <Link
-            to={'/signIn'}
-            className="text-sm font-semibold leading-6 text-gray-900"
-          >
-            Log in <span aria-hidden="true">&rarr;</span>
-          </Link>
+          {isLoggedIn ? (
+          <ProfileBadge />) :
+            <Link
+              to={'/signIn'}
+              className="text-sm font-semibold leading-6 text-gray-900"
+            >
+              Log in <span aria-hidden="true">&rarr;</span>
+            </Link>
+          }
         </div>
       </nav>
       <Dialog
