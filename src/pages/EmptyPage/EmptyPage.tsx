@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom';
-
 export const EmptyPage = () => {
   return (
     <>
@@ -14,7 +12,7 @@ export const EmptyPage = () => {
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <p className="mt-4 text-3xl font-bold tracking-tight text-gray-900">
-              <Link to={'/'}>Go back home</Link>
+            <a href="/">Go back home</a>
             </p>
           </div>
         </div>

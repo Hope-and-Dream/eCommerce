@@ -7,17 +7,17 @@ type Props = {
   price: number;
   imageSrc: string;
   imageAlt?: string;
+  onCloseModal: () => void
 };
 
-export const Example = ({
+export const ItemCardModal = ({
   title,
   price,
   imageSrc,
   imageAlt = 'item image',
+  onCloseModal
 }: Props) => {
   const [open, setOpen] = useState(true)
-  console.log ("клик сработал")
-
 
   return (
     <>
@@ -51,7 +51,11 @@ export const Example = ({
                   <button
                     type="button"
                     className="absolute right-4 top-4 text-gray-400 hover:text-gray-500 sm:right-6 sm:top-8 md:right-6 md:top-6 lg:right-8 lg:top-8"
-                    onClick={() => setOpen(false)}
+                    onClick={() => {
+                      setOpen(false)
+                      onCloseModal();
+                    }
+                    }
                   >
                     <span className="sr-only">Close</span>
                     <XMarkIcon className="h-6 w-6" aria-hidden="true" />

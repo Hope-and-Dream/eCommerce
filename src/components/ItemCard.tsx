@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Example } from './ItemCardModal.tsx';
+import { ItemCardModal } from './ItemCardModal.tsx';
 
 type Props = {
   title: string;
@@ -17,11 +17,17 @@ export const ItemCard = ({
   imageAlt = 'item image',
 }: Props) => {
 
-  const [showComponent, setShowComponent] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const handleClick = () => {
-    setShowComponent(true);
+    setOpen(true);
   }
+
+  const handleCloseModal = () => {
+    setOpen(false);
+  };
+
+
 
   return (
     <>
@@ -44,11 +50,12 @@ export const ItemCard = ({
           <p className="text-sm font-medium text-gray-900">{price}</p>
         </div>
       </div>
-      {showComponent && <Example
+      {open && <ItemCardModal
         title={title}
         price={price}
         imageSrc={imageSrc}
         imageAlt={imageAlt}
+        onCloseModal={handleCloseModal}
       />}
     </>
   );
