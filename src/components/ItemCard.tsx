@@ -25,7 +25,7 @@ export const ItemCard = ({
 
   return (
     <>
-      <div className="group relative" onClick={handleClick}>
+      <div className="group relative animate-shake animate-once animate-duration-[1500ms] animate-ease-in animate-normal " onClick={handleClick}>
         <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
           <img
             src={imageSrc}
