@@ -15,10 +15,12 @@ export const Example = ({
   imageSrc,
   imageAlt = 'item image',
 }: Props) => {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(true)
+  console.log ("клик сработал")
 
 
   return (
+    <>
     <Transition.Root show={open} as={Fragment}>
       <Dialog className="relative z-10" onClose={setOpen}>
         <Transition.Child
@@ -83,5 +85,6 @@ export const Example = ({
         </div>
       </Dialog>
     </Transition.Root>
+  </>
   )
 }

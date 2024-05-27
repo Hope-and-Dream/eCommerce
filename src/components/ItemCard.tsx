@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Example } from './ItemCardModal.tsx'
+import { Example } from './ItemCardModal.tsx';
 
 type Props = {
   title: string;
